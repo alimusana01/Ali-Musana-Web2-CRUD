@@ -26,4 +26,4 @@ Route::get('mahasiswa-create', 'MahasiswaController@create');
 // rutter makul
 Route::get('makul', 'makulcontroller@index')->name('makul');
 Route::get('tambah-makul', 'makulcontroller@create')->name('tambah.makul');
-Route::get('simpan-makul', 'makulcontroller@create')->name('simpan.makul');
+Route::post('simpan-makul', 'makulcontroller@create')->name('simpan.makul');

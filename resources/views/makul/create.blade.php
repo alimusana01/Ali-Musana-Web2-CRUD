@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Tambah Makul</div>
                 <div class="card-body">
-                <form action="" method="post">
+                <form action="{{ route('simpan.makul')}}" method="post">
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col">
@@ -22,7 +22,7 @@
 
                             <div class="col">
                                 <label for="">SKS </label>
-                                <input type="number" name="nama_makul" class="form-control" placeholder="Tambah SKS">
+                                <input type="number" name="sks" class="form-control" placeholder="Tambah SKS">
                             </div>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                         <div class="form-row float-right" >
                             <div class="col">
                                 <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
-                                <button type="{{route('makul')}}" class="btn btn-md btn-danger">BATAL</button>
+                                <a href="{{ route('makul')}}" class="btn btn-md btn-danger">BATAL</a>
                             </div>
                         </div>
                     </div>
