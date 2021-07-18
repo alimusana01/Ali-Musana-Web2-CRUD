@@ -9,7 +9,7 @@
                     <a href="{{ route('tambah.makul')}}" class="btn btn-md btn-warning float-right">TAMBAH DATA</a>
                 </div>
 
-
+                
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered">
@@ -20,15 +20,18 @@
                                 <th>SKS</th>
                                 <th>AKSI</th>
                             </tr>
+                            @php
+                            $no = 1;
+                            @endphp
                             @foreach ($makul as $mk)
                                 <tr>
-                                    <td>{{ $mk->id }}</td>
+                                    <td>{{ $no++ }}</td>
                                     <td>{{ $mk->kd_makul }}</td>
                                     <td>{{ $mk->nama_makul}}</td>
                                     <td>{{ $mk->sks}}</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-warning">EDIT</a>
-                                        <a href="#" class="btn btn-sm btn-danger">HAPUS</a>
+                                        <a href="{{ route('edit.makul', $mk->id) }}" class="btn btn-sm btn-warning">EDIT</a>
+                                        <a href="{{ route('hapus.makul', $mk->id) }}" class="btn btn-sm btn-danger">HAPUS</a>
                                     </td>
                                 </tr>
                             @endforeach

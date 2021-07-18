@@ -5,25 +5,29 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Tambah Makul</div>
+                <div class="card-header">Edit Makul</div>
                 <div class="card-body">
-                <form action="{{ route('simpan.makul')}}" method="post">
+                <form action="{{ route('update.makul', $makul->id)}}" method="post">
+
                     @csrf
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col">
                                 <label for="">Kode Makul </label>
-                                <input type="text" name="kd_makul" class="form-control" placeholder="Tambah Kode Makul">
+                                <input type="text" name="kd_makul" class="form-control" placeholder="Tambah Kode Makul" value="{{ is_null 
+                                ('$makul') ? '' : $makul->kd_makul}}">
                             </div>
 
                             <div class="col">
                                 <label for="">Nama Matakuliah </label>
-                                <input type="text" name="nama_makul" class="form-control" placeholder="Tambah Nama Matakuliah">
+                                <input type="text" name="nama_makul" class="form-control" placeholder="Tambah Nama Matakuliah"value="{{ is_null 
+                                ('$makul') ? '' : $makul->nama_makul}}">
                             </div>
 
                             <div class="col">
                                 <label for="">SKS </label>
-                                <input type="number" name="sks" class="form-control" placeholder="Tambah SKS">
+                                <input type="number" name="sks" class="form-control" placeholder="Tambah SKS" value="{{ is_null 
+                                ('$makul') ? '' : $makul->sks_makul}}">
                             </div>
                         </div>
                     </div>
